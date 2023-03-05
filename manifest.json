@@ -13,7 +13,7 @@
           "files": [
             {
               "name": "./files/folder/another-folder/nested-file.txt",
-              "versions": ["b89ca8c"]
+              "versions": ["d13a587", "b89ca8c"]
             }
           ],
           "folders": []
