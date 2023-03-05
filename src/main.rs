@@ -1,10 +1,11 @@
-use std::{fs, io::Write};
+use std::{fs, io::Write, process::Command};
 
 use serde::{Deserialize, Serialize};
 
 #[derive(Serialize, Deserialize, Debug)]
 struct File {
     name: String,
+    versions: Vec<String>,
 }
 
 #[derive(Debug, Serialize, Deserialize)]
@@ -32,7 +33,26 @@ fn recursively_get_folder_paths(path: String) -> Result<Folder, ()> {
                     .folders
                     .push(recursively_get_folder_paths(file_path).unwrap());
             } else {
-                folder.files.push(File { name: file_path });
+                let log_data = Command::new("git")
+                    .args(["log", "--oneline", "--all", &file_path])
+                    .output()
+                    .expect("Failed to execute git log command");
+
+                let from_utf8_lossy = String::from_utf8_lossy(&log_data.stdout);
+                let splits = from_utf8_lossy.split_terminator("\n");
+
+                let mut versions = Vec::new();
+                for split in splits {
+                    if split.len() > 0 {
+                        let split = split.split(" ").collect::<Vec<&str>>();
+                        versions.push(split[0].to_string());
+                    }
+                }
+
+                folder.files.push(File {
+                    name: file_path,
+                    versions: versions,
+                });
             }
         }
     }

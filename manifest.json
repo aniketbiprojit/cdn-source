@@ -1,15 +1,20 @@
 {
   "name": "./files",
-  "files": [{ "name": "./files/added-file.txt" }],
+  "files": [{ "name": "./files/added-file.txt", "versions": ["b89ca8c"] }],
   "folders": [
     {
       "name": "./files/folder",
-      "files": [{ "name": "./files/folder/another-file.txt" }],
+      "files": [
+        { "name": "./files/folder/another-file.txt", "versions": ["b89ca8c"] }
+      ],
       "folders": [
         {
           "name": "./files/folder/another-folder",
           "files": [
-            { "name": "./files/folder/another-folder/nested-file.txt" }
+            {
+              "name": "./files/folder/another-folder/nested-file.txt",
+              "versions": ["b89ca8c"]
+            }
           ],
           "folders": []
         }
