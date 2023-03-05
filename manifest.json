@@ -1,0 +1,19 @@
+{
+  "name": "./files",
+  "files": [{ "name": "./files/added-file.txt" }],
+  "folders": [
+    {
+      "name": "./files/folder",
+      "files": [{ "name": "./files/folder/another-file.txt" }],
+      "folders": [
+        {
+          "name": "./files/folder/another-folder",
+          "files": [
+            { "name": "./files/folder/another-folder/nested-file.txt" }
+          ],
+          "folders": []
+        }
+      ]
+    }
+  ]
+}
