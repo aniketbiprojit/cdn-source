@@ -1,1 +1,24 @@
-{"name":"./files","files":[{"name":"./files/added-file.txt","versions":["73e128a"]}],"folders":[{"name":"./files/folder","files":[{"name":"./files/folder/another-file.txt","versions":["73e128a"]}],"folders":[{"name":"./files/folder/another-folder","files":[{"name":"./files/folder/another-folder/nested-file.txt","versions":["73e128a"]}],"folders":[]}]}]}
+{
+  "name": "./files",
+  "files": [{ "name": "./files/added-file.txt", "versions": ["b89ca8c"] }],
+  "folders": [
+    {
+      "name": "./files/folder",
+      "files": [
+        { "name": "./files/folder/another-file.txt", "versions": ["b89ca8c"] }
+      ],
+      "folders": [
+        {
+          "name": "./files/folder/another-folder",
+          "files": [
+            {
+              "name": "./files/folder/another-folder/nested-file.txt",
+              "versions": ["73e128a", "d13a587", "b89ca8c"]
+            }
+          ],
+          "folders": []
+        }
+      ]
+    }
+  ]
+}
